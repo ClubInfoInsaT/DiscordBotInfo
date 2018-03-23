@@ -18,6 +18,7 @@ import net.dv8tion.jda.core.managers.AudioManager;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Random;
 
 
@@ -91,7 +92,123 @@ public class BotMain extends ListenerAdapter {
 
         channel.sendMessage("On next !").queue();
     }
+    private void helpme(TextChannel channel){
+        StringBuilder help=new StringBuilder();
+        help.append("Voici la liste des commandes utiles: \n");
+        help.append("- /help => voir ceci\n");
+        help.append("- /play [URL_Youtube] => Charge la musique dans la file d'attente. Si le bot n'est pas là, il rejoint le channel bot_music\n");
+        help.append("- /now => Affiche la musique actuelle\n");
+        help.append("- /stop => Arrête la musique et le bot se déconnecte\n");
+        help.append("- /list => Liste les musiques actuellement dans la file d'attente avec le temps de chacune\n");
+        help.append("- /pause => Pause ou relance une musique sur pause\n");
+        help.append("- /skip => Passe la chanson actuelle pour lancer la prochaine");
+        help.append("- /volume ([10-100]) => Sans argument ça donne le volume actuel ( par défaut à 35). Avec argument change le volume pour mettre le volume passé en argument. Valeurs possibles comprises entre 10 et 100\n");
+        help.append("Voilà voilà");
+        channel.sendMessage(help.toString()).queue();
+    }
+    public void listAllsong(TextChannel channel){
+        GuildMusicManager musicManager=getGuildAudioPlayer(channel.getGuild());
+        Queue<AudioTrack> queue =musicManager.scheduler.queue;
+        synchronized (queue){
+            if (queue.isEmpty()){
+                channel.sendMessage("La liste d'attente est vide");
+            }
+            {
+                int trackCount = 0;
+                long queueLength = 0;
+                StringBuilder sb = new StringBuilder();
+                sb.append("Liste actuelle: Entrée: ").append(queue.size()+1).append("\n");
+                AudioTrack actual=musicManager.scheduler.player.getPlayingTrack();
+                queueLength+=actual.getDuration()-actual.getPosition();
+                sb.append("`[").append(getTimestamp(queueLength)).append("]` ");
+                sb.append(actual.getInfo().title).append("\n");
+                trackCount++;
+                for (AudioTrack track : queue)
+                {
+                    queueLength += track.getDuration();
+                    if (trackCount < 10)
+                    {
+                        sb.append("`[").append(getTimestamp(track.getDuration())).append("]` ");
+                        sb.append(track.getInfo().title).append("\n");
+                        trackCount++;
+                    }
+                }
+                sb.append("\n").append("Total Durée de ma liste: ").append(getTimestamp(queueLength));
 
+                channel.sendMessage(sb.toString()).queue();
+            }
+        }
+    }
+
+    private void volume(String[] command, TextChannel channel){
+        GuildMusicManager musicManager=getGuildAudioPlayer(channel.getGuild());
+        AudioPlayer player=musicManager.audioPlayer;
+        if (command.length==2){
+            try
+            {
+                int newVolume = Math.max(10, Math.min(100, Integer.parseInt(command[1])));
+                int oldVolume = player.getVolume();
+                player.setVolume(newVolume);
+                channel.sendMessage("Le volume passe de  `" + oldVolume + "` à `" + newVolume + "`").queue();
+            }
+            catch (NumberFormatException e)
+            {
+                channel.sendMessage("`" + command[1] + "` ne fait pas partie de l'intervalle acceptée. (10 - 100)").queue();
+            }
+        }
+        else{
+            channel.sendMessage("Le volume actuel est à "+musicManager.getVolume()).queue();
+        }
+    }
+    private void resetList(TextChannel channel){
+        GuildMusicManager musicManager=getGuildAudioPlayer(channel.getGuild());
+        musicManager.audioPlayer.stopTrack();
+        musicManager.scheduler.reset();
+        channel.sendMessage("On reset la playlist").queue();
+    }
+    public void stop(TextChannel channel){
+        GuildMusicManager musicManager=getGuildAudioPlayer(channel.getGuild());
+        musicManager.scheduler.queue.clear();
+        musicManager.audioPlayer.stopTrack();
+        musicManager.audioPlayer.setPaused(false);
+        Guild guild=channel.getGuild();
+        guild.getAudioManager().setSendingHandler(null);
+        guild.getAudioManager().closeAudioConnection();
+        channel.sendMessage("Arrêt de la musique");
+    }
+    private void whatIsNow(TextChannel channel){
+        GuildMusicManager musicManager=getGuildAudioPlayer(channel.getGuild());
+        AudioTrack currentTrack = musicManager.audioPlayer.getPlayingTrack();
+        if (currentTrack != null)
+        {
+            String title = currentTrack.getInfo().title;
+            String position = getTimestamp(currentTrack.getPosition());
+            String duration = getTimestamp(currentTrack.getDuration());
+
+            String nowplaying = String.format("**En cours:** %s\n**Temps:** [%s / %s]",
+                    title, position, duration);
+
+            channel.sendMessage(nowplaying).queue();
+        }
+        else {
+            channel.sendMessage("Euh, y'a rien qui est en cours là..").queue();
+        }
+    }
+
+
+    private void restart(TextChannel channel){
+        GuildMusicManager musicManager=getGuildAudioPlayer(channel.getGuild());
+        AudioTrack track=musicManager.audioPlayer.getPlayingTrack();
+
+        if (track==null){
+            channel.sendMessage("Restart quoi ? J'ai rien en mémoire").queue();
+        }
+
+        if (track!=null){
+            channel.sendMessage("Restart de"+track.getInfo().title).queue();
+            musicManager.audioPlayer.playTrack(track.makeClone());
+        }
+    }
     private void pauseTrack(TextChannel channel){
         GuildMusicManager musicManager=getGuildAudioPlayer(channel.getGuild());
         musicManager.scheduler.pause();
@@ -130,7 +247,7 @@ public class BotMain extends ListenerAdapter {
         User autheur=msg.getAuthor();
         String charac=msg.getContentDisplay();
         if (!autheur.isBot()){
-            if (charac.equals("!ping")){
+            if (charac.toLowerCase().contains("ping")){
                 chan.sendMessage("pong !").queue();
             }
             if (charac.toLowerCase().startsWith("Je suis".toLowerCase())){
@@ -221,9 +338,48 @@ public class BotMain extends ListenerAdapter {
                     else if ("/skip".equals(command[0])){
                         skipTrack(event.getTextChannel());
                     }
+                    else if ("/pause".equals(command[0])){
+                        pauseTrack(event.getTextChannel());
+                    }
+                    else if ("/reset".equals(command[0])){
+                        resetList(event.getTextChannel());
+                    }
+                    else if ("/list".equals(command[0])){
+                        listAllsong(event.getTextChannel());
+                    }
+                    else if ("/volume".equals(command[0])){
+                        volume(command,event.getTextChannel());
+                    }
+                    else if ("/restart".equals(command[0])){
+                        restart(event.getTextChannel());
+                    }
+                    else if ("/stop".equals(command[0])){
+                        stop(event.getTextChannel());
+                    }
+                    else if ("/now".equals(command[0])){
+                        whatIsNow(event.getTextChannel());
+                    }
+                    else if ("/help".equals(command[0])){
+                        helpme(event.getTextChannel());
+                    }
                 }
                 super.onMessageReceived(event);
             }
         }
     }
+
+
+    private static String getTimestamp(long milliseconds)
+    {
+        int seconds = (int) (milliseconds / 1000) % 60 ;
+        int minutes = (int) ((milliseconds / (1000 * 60)) % 60);
+        int hours   = (int) ((milliseconds / (1000 * 60 * 60)) % 24);
+
+        if (hours > 0)
+            return String.format("%02d:%02d:%02d", hours, minutes, seconds);
+        else
+            return String.format("%02d:%02d", minutes, seconds);
+    }
+
 }
+
