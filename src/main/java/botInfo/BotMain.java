@@ -92,6 +92,7 @@ public class BotMain extends ListenerAdapter {
 
         channel.sendMessage("On next !").queue();
     }
+
     private void helpme(TextChannel channel){
         StringBuilder help=new StringBuilder();
         help.append("Voici la liste des commandes utiles: \n");
@@ -106,6 +107,7 @@ public class BotMain extends ListenerAdapter {
         help.append("Voilà voilà");
         channel.sendMessage(help.toString()).queue();
     }
+
     public void listAllsong(TextChannel channel){
         GuildMusicManager musicManager=getGuildAudioPlayer(channel.getGuild());
         Queue<AudioTrack> queue =musicManager.scheduler.queue;
@@ -160,12 +162,14 @@ public class BotMain extends ListenerAdapter {
             channel.sendMessage("Le volume actuel est à "+musicManager.getVolume()).queue();
         }
     }
+
     private void resetList(TextChannel channel){
         GuildMusicManager musicManager=getGuildAudioPlayer(channel.getGuild());
         musicManager.audioPlayer.stopTrack();
         musicManager.scheduler.reset();
         channel.sendMessage("On reset la playlist").queue();
     }
+
     public void stop(TextChannel channel){
         GuildMusicManager musicManager=getGuildAudioPlayer(channel.getGuild());
         musicManager.scheduler.queue.clear();
@@ -209,6 +213,7 @@ public class BotMain extends ListenerAdapter {
             musicManager.audioPlayer.playTrack(track.makeClone());
         }
     }
+
     private void pauseTrack(TextChannel channel){
         GuildMusicManager musicManager=getGuildAudioPlayer(channel.getGuild());
         musicManager.scheduler.pause();
@@ -230,6 +235,7 @@ public class BotMain extends ListenerAdapter {
             }
         }
     }
+
     private synchronized GuildMusicManager getGuildAudioPlayer(Guild guild){
         long guildId=Long.parseLong(guild.getId());
         GuildMusicManager musicManager=musicManagers.get(guildId);
@@ -243,6 +249,8 @@ public class BotMain extends ListenerAdapter {
 
         return musicManager;
     }
+
+
     public void msgText(Message msg, MessageChannel chan){
         User autheur=msg.getAuthor();
         String charac=msg.getContentDisplay();
@@ -359,6 +367,8 @@ public class BotMain extends ListenerAdapter {
                     else if ("/now".equals(command[0])){
                         whatIsNow(event.getTextChannel());
                     }
+                    else if("/pplay".equals(command[0])){
+                    }
                     else if ("/help".equals(command[0])){
                         helpme(event.getTextChannel());
                     }
@@ -367,7 +377,6 @@ public class BotMain extends ListenerAdapter {
             }
         }
     }
-
 
     private static String getTimestamp(long milliseconds)
     {
