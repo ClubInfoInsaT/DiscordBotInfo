@@ -51,27 +51,6 @@ public class SearchYt{
         }
     }
 
-    /**
-     * Creates an authorized Credential object.
-     * @return an authorized Credential object.
-     * @throws IOException
-     */
-    /*public static Credential authorize() throws IOException {
-        // Load client secrets.
-        InputStream in = SearchYt.class.getResourceAsStream("/client_secret.json");
-        GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader( in ));
-
-        // Build flow and trigger user authorization request.
-        GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
-                HTTP_TRANSPORT, JSON_FACTORY, clientSecrets, SCOPES)
-                .setDataStoreFactory(DATA_STORE_FACTORY)
-                .setAccessType("offline")
-                .build();
-        Credential credential = new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver()).authorize("user");
-        System.out.println(
-                "Credentials saved to " + DATA_STORE_DIR.getAbsolutePath());
-        return credential;
-    }*/
 
     /**
      * Build and return an authorized API client service, such as a YouTube
@@ -92,7 +71,49 @@ public class SearchYt{
     }
 
     public static String getResult(String query) throws IOException {
+        YouTube youtube = getYouTubeService();
+        StringBuilder stb=new StringBuilder();
+        try {
+            HashMap<String, String> parameters = new HashMap<>();
+            parameters.put("part", "snippet");
+            parameters.put("maxResults", "5");
+            parameters.put("q", query);
+            parameters.put("type", "video");
 
+            YouTube.Search.List searchListByKeywordRequest = youtube.search().list(parameters.get("part").toString());
+            searchListByKeywordRequest.setKey("AIzaSyDL5vdPmPIZDxdDqwZcRTvbcYMGluZ8_0U");
+            if (parameters.containsKey("maxResults")) {
+                searchListByKeywordRequest.setMaxResults(Long.parseLong(parameters.get("maxResults").toString()));
+            }
+
+            if (parameters.containsKey("q") && parameters.get("q") != "") {
+                searchListByKeywordRequest.setQ(parameters.get("q").toString());
+            }
+
+            if (parameters.containsKey("type") && parameters.get("type") != "") {
+                searchListByKeywordRequest.setType(parameters.get("type").toString());
+            }
+
+            SearchListResponse response = searchListByKeywordRequest.execute();
+            List<SearchResult> searchResultList = response.getItems();
+            stb.append("Resultats\n");
+            for (SearchResult result :searchResultList){
+                stb.append("Titre : "+result.getSnippet().getTitle()+"\n");
+                stb.append("https://www.youtube.com/watch?v="+result.getId().getVideoId()+"\n");
+                stb.append("\n\n");
+            }
+        } catch (GoogleJsonResponseException e) {
+            e.printStackTrace();
+            stb.append("Erreur query\n");
+            System.err.println("There was a service error: " + e.getDetails().getCode() + " : " + e.getDetails().getMessage());
+        } catch (Throwable t) {
+            stb.append("Erreur query\n");
+            t.printStackTrace();
+        }
+        return (stb.toString());
+    }
+
+    public static String getUrl(String query) throws IOException {
         YouTube youtube = getYouTubeService();
         StringBuilder stb=new StringBuilder();
         try {
@@ -118,11 +139,8 @@ public class SearchYt{
 
             SearchListResponse response = searchListByKeywordRequest.execute();
             List<SearchResult> searchResultList = response.getItems();
-            stb.append("Resultats\n");
             for (SearchResult result :searchResultList){
-                stb.append("Titre : "+result.getSnippet().getTitle()+"\n");
-                stb.append("https://www.youtube.com/watch?v="+result.getId().getVideoId()+"\n");
-                stb.append("\n\n");
+                stb.append("https://www.youtube.com/watch?v="+result.getId().getVideoId());
             }
         } catch (GoogleJsonResponseException e) {
             e.printStackTrace();

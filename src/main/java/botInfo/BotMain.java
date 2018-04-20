@@ -82,7 +82,6 @@ public class BotMain extends ListenerAdapter {
 
     private void play(Guild guild, GuildMusicManager musicManager, AudioTrack track){
         connectToChannel(guild.getAudioManager());
-
         musicManager.scheduler.queue(track);
     }
 
@@ -370,6 +369,9 @@ public class BotMain extends ListenerAdapter {
                     else if("/search".equals(command[0])){
                         searchYt(command,event.getTextChannel());
                     }
+                    else if("/searchadd".equals(command[0])){
+                        searchYtAdd(command,event.getTextChannel());
+                    }
                     else if ("/help".equals(command[0])){
                         helpme(event.getTextChannel());
                     }
@@ -379,16 +381,27 @@ public class BotMain extends ListenerAdapter {
         }
     }
 
+    private void searchYtAdd(String[] command, TextChannel textChannel) {
+        String url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        try
+        {
+            url=SearchYt.getUrl(command[1]);
+        }catch (IOException e) {
+            System.out.println("Erreur recherche\n");
+            e.printStackTrace();
+        }
+        loadAndPlay(textChannel,url);
+    }
+
     private void searchYt(String[] command, TextChannel textChannel) {
         String resultat;
         try {
             resultat=SearchYt.getResult(command[1]);
         } catch (IOException e) {
-            resultat="Erreur\n";
+            resultat="Erreur recherche\n";
             e.printStackTrace();
         }
         textChannel.sendMessage(resultat).queue();
-        System.out.println(resultat);
     }
 
     private static String getTimestamp(long milliseconds)
