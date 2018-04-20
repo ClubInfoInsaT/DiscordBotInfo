@@ -16,17 +16,13 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 import net.dv8tion.jda.core.managers.AudioManager;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Queue;
-import java.util.Random;
-
+import java.io.IOException;
+import java.util.*;
 
 public class BotMain extends ListenerAdapter {
 
     private final AudioPlayerManager playerManager;
     private final Map<Long,GuildMusicManager> musicManagers;
-
     public static void main(String[] args){
         // Note: It is important to register your ReadyListener before building
         try {
@@ -37,6 +33,10 @@ public class BotMain extends ListenerAdapter {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        /*try{
+            youTube=new YouTube.Builder();
+        }*/
     }
 
     public BotMain(){
@@ -110,7 +110,7 @@ public class BotMain extends ListenerAdapter {
 
     public void listAllsong(TextChannel channel){
         GuildMusicManager musicManager=getGuildAudioPlayer(channel.getGuild());
-        Queue<AudioTrack> queue =musicManager.scheduler.queue;
+        Queue<AudioTrack> queue =musicManager.scheduler.playlist;
         synchronized (queue){
             if (queue.isEmpty()){
                 channel.sendMessage("La liste d'attente est vide");
@@ -172,7 +172,7 @@ public class BotMain extends ListenerAdapter {
 
     public void stop(TextChannel channel){
         GuildMusicManager musicManager=getGuildAudioPlayer(channel.getGuild());
-        musicManager.scheduler.queue.clear();
+        musicManager.scheduler.playlist.clear();
         musicManager.audioPlayer.stopTrack();
         musicManager.audioPlayer.setPaused(false);
         Guild guild=channel.getGuild();
@@ -202,7 +202,7 @@ public class BotMain extends ListenerAdapter {
 
     private void restart(TextChannel channel){
         GuildMusicManager musicManager=getGuildAudioPlayer(channel.getGuild());
-        AudioTrack track=musicManager.audioPlayer.getPlayingTrack();
+        AudioTrack track=musicManager.scheduler.lastplayed;
 
         if (track==null){
             channel.sendMessage("Restart quoi ? J'ai rien en mémoire").queue();
@@ -367,7 +367,8 @@ public class BotMain extends ListenerAdapter {
                     else if ("/now".equals(command[0])){
                         whatIsNow(event.getTextChannel());
                     }
-                    else if("/pplay".equals(command[0])){
+                    else if("/search".equals(command[0])){
+                        searchYt(command,event.getTextChannel());
                     }
                     else if ("/help".equals(command[0])){
                         helpme(event.getTextChannel());
@@ -376,6 +377,18 @@ public class BotMain extends ListenerAdapter {
                 super.onMessageReceived(event);
             }
         }
+    }
+
+    private void searchYt(String[] command, TextChannel textChannel) {
+        String resultat;
+        try {
+            resultat=SearchYt.getResult(command[1]);
+        } catch (IOException e) {
+            resultat="Erreur\n";
+            e.printStackTrace();
+        }
+        textChannel.sendMessage(resultat).queue();
+        System.out.println(resultat);
     }
 
     private static String getTimestamp(long milliseconds)

@@ -6,13 +6,15 @@ import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrackEndReason;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class TrackScheduler extends AudioEventAdapter {
     public final AudioPlayer player;
-    public BlockingQueue<AudioTrack> queue;
+    public LinkedList<AudioTrack> playlist;
+    public AudioTrack lastplayed;
     public boolean repeat;
 
     /**
@@ -21,17 +23,25 @@ public class TrackScheduler extends AudioEventAdapter {
      * */
     public TrackScheduler(AudioPlayer player){
         this.player=player;
-        this.queue=new LinkedBlockingQueue<>();
+        this.playlist=new LinkedList<AudioTrack>();
+        this.repeat=false;
     }
 
     public void queue(AudioTrack track){
         if (!player.startTrack(track,true)){
-            queue.offer(track);
+            this.playlist.offer(track);
         }
     }
 
-    public void nextTrack(){
-        player.startTrack(queue.poll(),false);
+    public void nextTrack()
+    {
+        if (this.repeat==Boolean.TRUE) {
+            lastplayed=playlist.poll();
+            player.startTrack(lastplayed, false);
+        }
+        else{
+            player.startTrack(this.lastplayed,false);
+        }
     }
 
     @Override
@@ -41,8 +51,11 @@ public class TrackScheduler extends AudioEventAdapter {
         }
     }
 
+    public void setRepeat(boolean rep){
+        this.repeat=rep;
+    }
     public void reset(){
-        this.queue=new LinkedBlockingQueue<>();
+        this.playlist=new LinkedList<AudioTrack>();
     }
     public void pause(){
         player.setPaused(!player.isPaused());
