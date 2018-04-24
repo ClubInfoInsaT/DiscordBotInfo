@@ -33,10 +33,6 @@ public class BotMain extends ListenerAdapter {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        /*try{
-            youTube=new YouTube.Builder();
-        }*/
     }
 
     public BotMain(){
@@ -105,6 +101,10 @@ public class BotMain extends ListenerAdapter {
         help.append("- /volume ([10-100]) => Sans argument ça donne le volume actuel ( par défaut à 35). Avec argument change le volume pour mettre le volume passé en argument. Valeurs possibles comprises entre 10 et 100\n");
         help.append("- /search [Query] => Affiche les 5 premières urls du resultat youtube avec leur urls.\n");
         help.append("- /searchadd [Query] => Recherche & ajoute le premier lien youtube \n");
+        help.append("-----------------------\n");
+        help.append("- !roll [Int] => Roll un dé entre 1 & le nombre. Si pas de nombre, il roll un D6\n");
+        help.append("- !ping => Pong bruh\n");
+        help.append("- !meteo => Donne la température actuelle à Toulouse\n");
         help.append("Voilà voilà");
         channel.sendMessage(help.toString()).queue();
     }
@@ -271,6 +271,9 @@ public class BotMain extends ListenerAdapter {
             }
             if (charac.toLowerCase().contains("test")){
                 chan.sendMessage(autheur.getName()+" tests unitaires ?").queue();
+            }
+            if (charac.startsWith("!meteo")){
+                chan.sendMessage(MeteoCall.getMeteoNow()).queue();
             }
             if (charac.startsWith("!roll")){
                 int param1;

@@ -7,12 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a832b708-a804-4176-8529-19b48f730efc" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openweathermap_java_api_api_common_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openweathermap_java_api_api_model_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openweathermap_java_api_api_query_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_16_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/api_core_1_2_javadoc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/botInfo/MeteoCall.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DiscordBotInfo_jar/DiscordBotInfo.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DiscordBotInfo_jar/DiscordBotInfo.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBotInfo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBotInfo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/botInfo/BotMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/botInfo/BotMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/botInfo/BotMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/botInfo/BotMain.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,7 +49,29 @@
     <favorites_list name="CodeIris Favorites" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="MeteoCall.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/MeteoCall.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BotMain.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/BotMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3493">
+              <caret line="275" column="66" selection-start-line="275" selection-start-column="66" selection-end-line="275" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -56,6 +85,7 @@
       <find>try</find>
       <find>playlist</find>
       <find>Stringb</find>
+      <find>help</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -78,11 +108,12 @@
         <option value="$PROJECT_DIR$/src/main/java/botInfo/GuildMusicManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/src/main/java/botInfo/PlayList.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/botInfo/AudioPlayerSendHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/botInfo/TrackScheduler.java" />
         <option value="$PROJECT_DIR$/src/main/resources/API_KEY" />
         <option value="$PROJECT_DIR$/src/main/java/botInfo/SearchYt.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/botInfo/MeteoCall.java" />
         <option value="$PROJECT_DIR$/src/main/java/botInfo/BotMain.java" />
       </list>
     </option>
@@ -111,6 +142,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
@@ -154,7 +186,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -163,8 +194,8 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/api-core-1.2.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.090043925" />
     <property name="project.structure.side.proportion" value="0.24698311" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -182,12 +213,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BotMain">
+  <component name="RunManager" selected="Application.MeteoCall">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
     <configuration name="BotMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="botInfo.BotMain" />
+      <module name="DiscordBotInfo" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="botInfo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="MeteoCall" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="botInfo.MeteoCall" />
       <module name="DiscordBotInfo" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -271,9 +313,11 @@
       <item itemvalue="Application.BotMain" />
       <item itemvalue="Application.SearchYt" />
       <item itemvalue="Application.SearchYt (1)" />
+      <item itemvalue="Application.MeteoCall" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MeteoCall" />
         <item itemvalue="Application.BotMain" />
         <item itemvalue="Application.SearchYt (1)" />
         <item itemvalue="Application.SearchYt" />
@@ -303,12 +347,13 @@
       <workItem from="1524212200803" duration="2780000" />
       <workItem from="1524245397205" duration="3806000" />
       <workItem from="1524258353440" duration="2207000" />
-      <workItem from="1524559267038" duration="205000" />
+      <workItem from="1524559267038" duration="1280000" />
+      <workItem from="1524578495095" duration="1789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25828000" />
+    <option name="totallyTimeSpent" value="28635000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -321,23 +366,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1368" height="725" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32764506" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3105802" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3462963" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3447099" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3651877" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32935154" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32935154" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48346055" visible="true" weight="0.3181818" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48118278" weight="0.32348484" />
       <window_info anchor="right" id="Database" order="9" weight="0.32954547" />
-      <window_info id="Structure" order="6" sideWeight="0.51653945" side_tool="true" visible="true" weight="0.3181818" />
+      <window_info id="Structure" order="6" sideWeight="0.5188172" side_tool="true" weight="0.32348484" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="7" />
@@ -350,20 +397,19 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.3105802" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36734694" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3462963" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27633712" />
       <window_info id="Structure" order="1" weight="0.267423" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32993197" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3462963" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36734694" />
       <window_info id="Image Layers" order="5" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -388,10 +434,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/SearchYt.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2888">
-          <caret line="152" column="32" lean-forward="true" selection-start-line="152" selection-start-column="32" selection-end-line="152" selection-end-column="32" />
+        <state relative-caret-position="1197">
+          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -420,6 +466,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1140">
           <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
+          <folding>
+            <element signature="e#1518#1519#0" expanded="true" />
+            <element signature="e#1549#1550#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -455,6 +505,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1140">
           <caret line="60" column="39" lean-forward="true" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
+          <folding>
+            <element signature="e#1518#1519#0" expanded="true" />
+            <element signature="e#1549#1550#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -497,6 +551,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+          <folding>
+            <element signature="e#1518#1519#0" expanded="true" />
+            <element signature="e#1549#1550#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -689,13 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="37" column="43" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/AudioPlayerSendHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -714,6 +765,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="874">
           <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
+          <folding>
+            <element signature="e#1518#1519#0" expanded="true" />
+            <element signature="e#1549#1550#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -724,20 +779,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/BotMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="109" column="5" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/botInfo/GuildMusicManager.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/GuildMusicManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="7" column="41" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/MeteoCall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/BotMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3493">
+          <caret line="275" column="66" selection-start-line="275" selection-start-column="66" selection-end-line="275" selection-end-column="66" />
         </state>
       </provider>
     </entry>
@@ -749,8 +818,8 @@
           <artifact-editor>
             <show-sorted>false</show-sorted>
             <show-content>
-              <type id="library" />
               <type id="artifact" />
+              <type id="library" />
             </show-content>
           </artifact-editor>
           <last-edited>DiscordBotInfo:jar</last-edited>
@@ -827,11 +896,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>JDA-3.5.1_339-javadoc</last-edited>
+          <last-edited>api-core-1.2-javadoc</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.24031007" />
+                <option value="0.24698311" />
               </list>
             </option>
           </splitter-proportions>
