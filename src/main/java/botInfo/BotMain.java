@@ -103,6 +103,8 @@ public class BotMain extends ListenerAdapter {
         help.append("- /pause => Pause ou relance une musique sur pause\n");
         help.append("- /skip => Passe la chanson actuelle pour lancer la prochaine");
         help.append("- /volume ([10-100]) => Sans argument ça donne le volume actuel ( par défaut à 35). Avec argument change le volume pour mettre le volume passé en argument. Valeurs possibles comprises entre 10 et 100\n");
+        help.append("- /search [Query] => Affiche les 5 premières urls du resultat youtube avec leur urls.\n");
+        help.append("- /searchadd [Query] => Recherche & ajoute le premier lien youtube \n");
         help.append("Voilà voilà");
         channel.sendMessage(help.toString()).queue();
     }

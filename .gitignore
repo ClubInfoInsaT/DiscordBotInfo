@@ -1,0 +1,6 @@
+out
+
+#Ignore jar
+*.jar
+#Ignore class
+*.class

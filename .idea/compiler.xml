@@ -9,8 +9,8 @@
         <module name="DiscordBotInfo" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="DiscordBotInfo" target="1.8" />
+    <bytecodeTargetLevel target="7">
+      <module name="DiscordBotInfo" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
