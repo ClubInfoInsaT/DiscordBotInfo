@@ -35,25 +35,26 @@ public class TrackScheduler extends AudioEventAdapter {
 
     public void nextTrack()
     {
-        if (this.repeat==Boolean.TRUE) {
-            lastplayed=playlist.poll();
-            player.startTrack(lastplayed, false);
-        }
-        else{
-            player.startTrack(this.lastplayed,false);
-        }
+       player.startTrack(playlist.poll(),false);
     }
 
     @Override
     public void onTrackEnd(AudioPlayer player,AudioTrack track,AudioTrackEndReason endReason){
+        this.lastplayed=track;
         if (endReason.mayStartNext){
             nextTrack();
+            if (this.repeat){
+                player.startTrack(this.lastplayed.makeClone(),false);
+            }else{
+                nextTrack();
+            }
         }
     }
 
     public void setRepeat(boolean rep){
         this.repeat=rep;
     }
+
     public void reset(){
         this.playlist=new LinkedList<AudioTrack>();
     }
