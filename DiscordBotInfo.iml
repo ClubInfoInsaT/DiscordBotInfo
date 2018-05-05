@@ -47,5 +47,6 @@
     <orderEntry type="library" name="Maven: com.jagrosh:jda-utilities-doc:2.1" level="project" />
     <orderEntry type="library" name="Maven: com.jagrosh:jda-utilities-examples:2.1" level="project" />
     <orderEntry type="library" name="Maven: com.jagrosh:jda-utilities-menu:2.1" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.31" level="project" />
   </component>
 </module>

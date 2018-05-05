@@ -4,3 +4,9 @@ out
 *.jar
 #Ignore class
 *.class
+
+#Ignore pem
+*.pem
+
+#IGNORE API_KEY
+API_KEY

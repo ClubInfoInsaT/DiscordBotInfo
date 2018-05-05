@@ -1,3 +1,17 @@
 Manifest-Version: 1.0
+Class-Path: jackson-databind-2.9.4.jar JDA-3.5.1_339-withDependencies.
+ jar slf4j-api-1.7.25.jar jda-utilities-command-2.1.jar okhttp-3.9.1.j
+ ar lavaplayer-natives-1.2.55.jar api-core-1.2.jar google-http-client-
+ 1.23.0.jar gson-2.8.2.jar base64-2.3.9.jar commons-io-2.6.jar lavapla
+ yer-common-1.0.6.jar jda-utilities-doc-2.1.jar okio-1.13.0.jar api-qu
+ ery-1.2.jar lombok-1.16.20.jar jsoup-1.11.2.jar jsr305-3.0.2.jar jda-
+ utilities-examples-2.1.jar guava-jdk5-17.0.jar google-api-client-1.23
+ .0.jar httpclient-4.5.5.jar api-common-1.2.jar jda-utilities-menu-2.1
+ .jar google-api-services-youtube-v3-rev193-1.23.0.jar lavaplayer-1.2.
+ 56.jar google-http-client-jackson2-1.23.0.jar commons-codec-1.10.jar 
+ httpcore-4.4.9.jar commons-logging-1.2.jar google-oauth-client-1.23.0
+ .jar commons-lang3-3.7.jar jackson-core-2.9.4.jar jda-utilities-commo
+ ns-2.1.jar api-model-1.2.jar jackson-annotations-2.9.0.jar mysql-conn
+ ector-java-5.1.31.jar
 Main-Class: botInfo.BotMain
 

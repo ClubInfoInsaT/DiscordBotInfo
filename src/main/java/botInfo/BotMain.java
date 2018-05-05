@@ -1,15 +1,9 @@
 package botInfo;
 
 
-import java.awt.Color;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
-import javax.security.auth.login.LoginException;
-
+import botInfo.command.meteo.MeteoCommand;
+import botInfo.command.text.DadJokeCommand;
 import botInfo.command.text.RollCommand;
-import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
 import com.jagrosh.jdautilities.examples.command.AboutCommand;
@@ -19,7 +13,9 @@ import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.OnlineStatus;
 import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.entities.Game;
-import net.dv8tion.jda.core.exceptions.RateLimitedException;
+
+import javax.security.auth.login.LoginException;
+import java.awt.*;
 
 public class BotMain{
     public static void main(String[] args) throws LoginException {
@@ -43,8 +39,9 @@ public class BotMain{
                 new Permission[]{Permission.ADMINISTRATOR}),
 
                 new RollCommand(),
-                new PingCommand()
-
+                new PingCommand(),
+                new MeteoCommand(),
+                new DadJokeCommand()
                 );
 
         client.setEmojis("\uD83D\uDE03",
