@@ -1,4 +1,4 @@
-package botInfo;// Sample Java code for user authorization
+package botInfo.command.music;// Sample Java code for user authorization
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;

@@ -1,10 +1,10 @@
-package botInfo;
+package botInfo.command.music;
 
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
 
 public class GuildMusicManager {
-    public final AudioPlayer audioPlayer;
+    public final AudioPlayer player;
     public final TrackScheduler scheduler;
     public final AudioPlayerSendHandler sendHandler;
     public int DEFAULT_VOLUME=35;
@@ -13,18 +13,18 @@ public class GuildMusicManager {
     }
 
     public GuildMusicManager(AudioPlayerManager manager){
-        audioPlayer=manager.createPlayer();
-        audioPlayer.setVolume(DEFAULT_VOLUME);
-        scheduler=new TrackScheduler(audioPlayer);
-        sendHandler=new AudioPlayerSendHandler(audioPlayer);
-        audioPlayer.addListener(scheduler);
+        player=manager.createPlayer();
+        player.setVolume(DEFAULT_VOLUME);
+        scheduler=new TrackScheduler(player);
+        sendHandler=new AudioPlayerSendHandler(player);
+        player.addListener(scheduler);
     }
 
     public int getVolume() {
-        return this.audioPlayer.getVolume();
+        return this.player.getVolume();
     }
 
     public void setDefaultVolume(int defaultVolume) {
-        this.audioPlayer.setVolume(defaultVolume);
+        this.player.setVolume(defaultVolume);
     }
 }

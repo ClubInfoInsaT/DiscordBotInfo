@@ -1,8 +1,11 @@
 package botInfo;
 
 
+import botInfo.command.meme.xkcd.XkcdCommand;
 import botInfo.command.meteo.MeteoCommand;
+import botInfo.command.text.Ball8Command;
 import botInfo.command.text.DadJokeCommand;
+import botInfo.command.text.FlipCoinCommand;
 import botInfo.command.text.RollCommand;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
@@ -41,7 +44,10 @@ public class BotMain{
                 new RollCommand(),
                 new PingCommand(),
                 new MeteoCommand(),
-                new DadJokeCommand()
+                new DadJokeCommand(),
+                new FlipCoinCommand(),
+                new Ball8Command()
+                //new XkcdCommand()
                 );
 
         client.setEmojis("\uD83D\uDE03",
@@ -51,7 +57,7 @@ public class BotMain{
         new JDABuilder(AccountType.BOT)
                 .setToken(token)
                 .setStatus(OnlineStatus.DO_NOT_DISTURB)
-                .setGame(Game.playing("Final Fantasy Tactics"))
+                .setGame(Game.playing("World Of Warcraft"))
                 .addEventListener(waiter)
                 .addEventListener(client.build())
 
