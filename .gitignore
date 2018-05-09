@@ -1,4 +1,6 @@
-out
+#Ignore out & target files
+out/
+target/
 
 #Ignore jar
 *.jar

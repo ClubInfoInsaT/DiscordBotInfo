@@ -33,14 +33,20 @@ public class Ball8Command extends Command {
     );
     public Ball8Command(){
         this.name="ball";
+        this.aliases=new String[]{"8ball","ball8"};
         this.help="Répond à une question de façon random";
         this.botPermissions=new Permission[]{Permission.MESSAGE_WRITE};
         this.guildOnly=false;
     }
     @Override
     protected void execute(CommandEvent commandEvent) {
-        Random rand=new Random();
-        int value=rand.nextInt(reponse.size());
-        commandEvent.reply(reponse.get(value));
+        String[] com=commandEvent.getArgs().split("\\s+");
+        if (com.length!=0) {
+            Random rand = new Random();
+            int value = rand.nextInt(reponse.size());
+            commandEvent.reply(reponse.get(value));
+        }else{
+            commandEvent.reply("Il faudrait me poser une question..");
+        }
     }
 }

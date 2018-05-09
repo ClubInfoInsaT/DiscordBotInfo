@@ -3,10 +3,7 @@ package botInfo;
 
 import botInfo.command.meme.xkcd.XkcdCommand;
 import botInfo.command.meteo.MeteoCommand;
-import botInfo.command.text.Ball8Command;
-import botInfo.command.text.DadJokeCommand;
-import botInfo.command.text.FlipCoinCommand;
-import botInfo.command.text.RollCommand;
+import botInfo.command.text.*;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
 import com.jagrosh.jdautilities.examples.command.AboutCommand;
@@ -46,8 +43,11 @@ public class BotMain{
                 new MeteoCommand(),
                 new DadJokeCommand(),
                 new FlipCoinCommand(),
-                new Ball8Command()
-                //new XkcdCommand()
+                new Ball8Command(),
+                new XkcdCommand(),
+                new LMGTFY(),
+                new IsaacCommand(),
+                new RemindCommand()
                 );
 
         client.setEmojis("\uD83D\uDE03",

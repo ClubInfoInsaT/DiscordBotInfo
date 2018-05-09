@@ -9,6 +9,7 @@ import java.util.Random;
 public class FlipCoinCommand extends Command {
     public FlipCoinCommand(){
         this.name="coin";
+        this.aliases=new String[]{"flip","hasard"};
         this.help="Renvois soit pile ou face";
         this.botPermissions=new Permission[]{Permission.MESSAGE_WRITE};
         this.guildOnly=false;
