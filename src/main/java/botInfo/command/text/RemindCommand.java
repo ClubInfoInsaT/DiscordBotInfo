@@ -51,7 +51,7 @@ public class RemindCommand extends Command {
         StringBuilder ret=new StringBuilder();
         ret.append("Liste des remind : taille ("+listReminder.size()+")\n");
         for (int i=0;i<listReminder.size();i++){
-            ret.append(i+"."+"Propriétaire : "+listReminder.get(i).author.getName()+" "+listReminder.get(i).date.toString()+"\n");
+            ret.append("["+i+"] : "+"."+"Propriétaire : "+listReminder.get(i).author.getName()+" "+listReminder.get(i).date+"\n");
         }
         commandEvent.reply(ret.toString());
     }
@@ -90,10 +90,8 @@ public class RemindCommand extends Command {
                 timer.cancel();
             }
         };
-        commandEvent.reply("Ajout d'un timer. Size "+RemindCommand.listReminder.size());
         Association ass=new Association(commandEvent.getAuthor(),date,todo);
         RemindCommand.listReminder.add(ass);
-        commandEvent.reply("Ajout terminé. Size "+RemindCommand.listReminder.size());
         timer.schedule(todo,dateAvant);
     }
 

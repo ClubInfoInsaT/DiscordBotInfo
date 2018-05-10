@@ -36,8 +36,7 @@ public class BotMain{
         client.addCommands(new AboutCommand(Color.RED,
                 "Le bot Discord du Club'Info",
                 new String[]{"WOW","So much wow","Bamboozled"},
-                new Permission[]{Permission.ADMINISTRATOR}),
-
+                new Permission[]{Permission.MESSAGE_WRITE}),
                 new RollCommand(),
                 new PingCommand(),
                 new MeteoCommand(),
@@ -47,7 +46,9 @@ public class BotMain{
                 new XkcdCommand(),
                 new LMGTFY(),
                 new IsaacCommand(),
-                new RemindCommand()
+                new RemindCommand(),
+                new SendNudesCommand(),
+                new LoremIpsumCommand()
                 );
 
         client.setEmojis("\uD83D\uDE03",

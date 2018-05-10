@@ -66,10 +66,7 @@ public class PlayerControl extends ListenerAdapter {
         TrackScheduler scheduler=mng.scheduler;
 
     }
-
-
-
-
+    
     private void loadAndPlay(GuildMusicManager mng, final MessageChannel channel, String url, final boolean addPlaylist)
     {
         final String trackUrl;

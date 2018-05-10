@@ -10,19 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a832b708-a804-4176-8529-19b48f730efc" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/botInfo/command/Utils/XKCD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/botInfo/command/text/IsaacCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/botInfo/command/text/LMGTFY.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/botInfo/command/text/RemindCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/botInfo/command/text/LoremIpsumCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/botInfo/command/text/SendNudesCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DiscordBotInfo_jar/DiscordBotInfo.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/botInfo/BotMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/botInfo/BotMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/botInfo/command/meme/xkcd/XkcdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/botInfo/command/meme/xkcd/XkcdCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/botInfo/command/text/Ball8Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/botInfo/command/text/Ball8Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/botInfo/command/text/FlipCoinCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/botInfo/command/text/FlipCoinCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/botInfo/BotMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/botInfo/command/music/PlayerControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/botInfo/command/music/PlayerControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/botInfo/command/text/RemindCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/botInfo/command/text/RemindCommand.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -53,20 +46,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1406">
-              <caret line="74" column="27" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BotMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/BotMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+            <state relative-caret-position="458">
+              <caret line="50" column="39" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -74,26 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RemindCommand.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/text/RemindCommand.java">
+      <file leaf-file-name="LoremIpsumCommand.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/text/LoremIpsumCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="77" column="71" selection-start-line="77" selection-start-column="71" selection-end-line="77" selection-end-column="71" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1015#1028#0" expanded="true" />
-                <element signature="e#2990#3777#0" expanded="true" />
-                <element signature="e#3776#3777#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DadJokeCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/text/DadJokeCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="32" column="13" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="32" selection-end-column="13" />
+            <state relative-caret-position="230">
+              <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -154,16 +123,18 @@
         <option value="$PROJECT_DIR$/src/main/java/botInfo/command/music/AudioPlayerSendHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/botInfo/command/music/GuildMusicManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/botInfo/command/music/TrackScheduler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/botInfo/command/music/PlayerControl.java" />
         <option value="$PROJECT_DIR$/src/main/java/botInfo/command/text/ReminderCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/botInfo/command/text/FlipCoinCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/botInfo/command/text/Ball8Command.java" />
         <option value="$PROJECT_DIR$/src/main/java/botInfo/command/Utils/XKCD.java" />
         <option value="$PROJECT_DIR$/src/main/java/botInfo/command/meme/xkcd/XkcdCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/botInfo/command/text/LMGTFY.java" />
-        <option value="$PROJECT_DIR$/src/main/java/botInfo/BotMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/botInfo/command/text/IsaacCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/botInfo/command/text/RemindCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/botInfo/command/music/PlayerControl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/botInfo/command/text/SendNudesCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/botInfo/BotMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/botInfo/command/text/LoremIpsumCommand.java" />
       </list>
     </option>
   </component>
@@ -191,6 +162,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -290,9 +264,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -464,12 +435,14 @@
       <workItem from="1525456639419" duration="3732000" />
       <workItem from="1525504410577" duration="34866000" />
       <workItem from="1525623759644" duration="4253000" />
-      <workItem from="1525854889142" duration="27777000" />
+      <workItem from="1525854889142" duration="28802000" />
+      <workItem from="1525912379891" duration="786000" />
+      <workItem from="1525944523174" duration="1093000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101734000" />
+    <option name="totallyTimeSpent" value="104638000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -481,12 +454,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1366" height="717" extended-state="6" />
+    <frame x="-1" y="-11" width="1368" height="725" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32764506" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.3105802" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
@@ -494,11 +466,11 @@
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3447099" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3651877" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3651877" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49848485" weight="0.32764506" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48118278" weight="0.21439394" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48118278" visible="true" weight="0.22121212" />
       <window_info anchor="right" id="Database" order="9" weight="0.32954547" />
       <window_info id="Structure" order="6" sideWeight="0.5188172" side_tool="true" weight="0.32348484" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -506,6 +478,7 @@
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" sideWeight="0.50680274" side_tool="true" weight="0.2810606" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993174" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3105802" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -519,14 +492,14 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3462963" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36734694" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27633712" />
       <window_info id="Structure" order="1" weight="0.267423" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32993197" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36734694" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3462963" />
       <window_info id="Image Layers" order="5" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -565,20 +538,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/music/GuildMusicManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/music/AudioPlayerSendHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/BotMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="703">
@@ -764,29 +723,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/music/PlayerControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="100" selection-start-line="100" selection-end-line="100" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4511#4512#0" expanded="true" />
-            <element signature="e#4602#4603#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/music/SearchYt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/music/AudioPlayerSendHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -804,9 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -821,9 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -865,9 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
           <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -875,38 +806,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="28" column="17" lean-forward="true" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/text/ReminderCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/text/ReminderCommand.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/text/IsaacCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#584#585#0" expanded="true" />
-            <element signature="e#647#648#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/text/DadJokeCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="32" column="13" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="32" selection-end-column="13" />
+        <state relative-caret-position="532">
+          <caret line="32" column="13" selection-start-line="27" selection-start-column="12" selection-end-line="32" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -920,6 +834,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/text/RemindCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/music/AudioPlayerSendHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/music/GuildMusicManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -927,25 +855,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/BotMain.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/music/PlayerControl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+        <state relative-caret-position="19">
+          <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/text/RemindCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/text/SendNudesCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="77" column="71" selection-start-line="77" selection-start-column="71" selection-end-line="77" selection-end-column="71" />
+        <state relative-caret-position="171">
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1015#1028#0" expanded="true" />
-            <element signature="e#2990#3777#0" expanded="true" />
-            <element signature="e#3776#3777#0" expanded="true" />
+            <element signature="e#508#509#0" expanded="true" />
+            <element signature="e#551#552#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/BotMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="50" column="39" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/botInfo/command/text/LoremIpsumCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
