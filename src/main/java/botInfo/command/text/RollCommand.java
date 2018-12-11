@@ -8,11 +8,11 @@ import java.util.Random;
 
 public class RollCommand extends Command {
 
-    public RollCommand(){
-        this.name="roll";
-        this.help="roll [INT]. If no arg then roll 6, else roll [1-ARG]";
-        this.botPermissions=new Permission[]{Permission.MESSAGE_EMBED_LINKS};
-        this.guildOnly=false;
+    public RollCommand() {
+        this.name = "roll";
+        this.help = "roll [INT]. If no arg then roll 6, else roll [1-ARG]";
+        this.botPermissions = new Permission[]{Permission.MESSAGE_WRITE};
+        this.guildOnly = false;
     }
     @Override
     protected void execute(CommandEvent event) {

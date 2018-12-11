@@ -23,17 +23,20 @@ public class RemindCommand extends Command {
     protected static final SimpleDateFormat dateFormat=new SimpleDateFormat("dd/MM/yyyy");
     public static final List<Association> listReminder=new LinkedList<Association>();
     protected Date date=null;
+
     public RemindCommand(){
         this.name="remind";
         this.aliases=new String[]{"rappel"};
         this.botPermissions=new Permission[]{Permission.MESSAGE_WRITE};
-        this.help="/remind [DATE] [PORTEE] [MSG]. La date sous format JJ/MM/YYYY, la portée 1=tout le monde, 0=moi personnellement. MSG entreguillemets";
+        this.help="/remind [DATE] [PORTEE] [MSG]. La date sous format JJ/MM/YYYY, la portée 1=tout le monde, 0=moi personnellement. MSG entreguillemets.\n" +
+                "/remind list . Liste tous les reminds en cours.\n"+
+                "/remind cancel [numero dans la liste] . Supprime le remind si vous êtes le propriétaire.";
     }
     @Override
     protected void execute(CommandEvent commandEvent) {
         String[] arg=commandEvent.getArgs().split("\\s+");
         if (arg[0].toLowerCase().equals("cancel")){
-            int asupprimer=Integer.parseInt(arg[1]);
+            int asupprimer=Integer.parseInt(arg[1])-1;
             removeTimer(commandEvent,asupprimer);
         }else if (arg[0].toLowerCase().equals("list")){
             listTimer(commandEvent);
@@ -43,15 +46,24 @@ public class RemindCommand extends Command {
     }
 
     private void removeTimer(CommandEvent commandEvent, int index){
-        RemindCommand.listReminder.remove(index);
-        commandEvent.reply("Suppression du remind.");
+        if (index<RemindCommand.listReminder.size() && index>=0 ){
+            if (commandEvent.getAuthor().equals(RemindCommand.listReminder.get(index).author))
+            {
+                RemindCommand.listReminder.remove(index);
+                commandEvent.reply("Suppression du remind.");
+            }else{
+                commandEvent.reply("Vous n'avez pas le droit de supprimer le timer. Seul le propriétaire le peut.");
+            }
+        }else{
+            commandEvent.reply("Ce remind n'existe pas.");
+        }
     }
 
     private void listTimer(CommandEvent commandEvent){
         StringBuilder ret=new StringBuilder();
         ret.append("Liste des remind : taille ("+listReminder.size()+")\n");
         for (int i=0;i<listReminder.size();i++){
-            ret.append("["+i+"] : "+"."+"Propriétaire : "+listReminder.get(i).author.getName()+" "+listReminder.get(i).date+"\n");
+            ret.append("["+i+1+"] : "+"."+"Propriétaire : "+listReminder.get(i).author.getName()+" "+listReminder.get(i).date+"\n");
         }
         commandEvent.reply(ret.toString());
     }

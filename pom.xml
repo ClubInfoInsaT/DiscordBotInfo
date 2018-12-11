@@ -45,24 +45,6 @@
             <type>pom</type>
         </dependency>
         <dependency>
-            <groupId>org.openweathermap.java-api</groupId>
-            <artifactId>api-model</artifactId>
-            <version>1.2</version>
-            <type>pom</type>
-        </dependency>
-        <dependency>
-            <groupId>org.openweathermap.java-api</groupId>
-            <artifactId>api-query</artifactId>
-            <version>1.2</version>
-            <type>pom</type>
-        </dependency>
-        <dependency>
-            <groupId>org.openweathermap.java-api</groupId>
-            <artifactId>api-common</artifactId>
-            <version>1.2</version>
-            <type>pom</type>
-        </dependency>
-        <dependency>
             <groupId>com.jagrosh</groupId>
             <artifactId>jda-utilities</artifactId>
             <version>2.1</version>
